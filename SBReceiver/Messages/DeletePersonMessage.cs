@@ -1,12 +1,9 @@
-﻿using SBReceiver;
-using SBReceiver.Services;
+﻿using SBReceiver.Services;
 using SBShared.DTOs;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace SBShared.Models
+namespace SBReceiver.Messages
 {
     public class DeletePersonMessage : BaseMessageHandler<DeletePersonMessageDTO>
     {

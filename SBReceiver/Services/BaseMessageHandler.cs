@@ -5,7 +5,7 @@ namespace SBReceiver.Services
 {
     public abstract class BaseMessageHandler <T> : IMessageHandler<T> where T : class
     {
-        public bool CanBeHandledType(object type)
+        public bool CanBeHandledType(T type)
         {
             return type.GetType() == typeof(IMessage<>);
         }
@@ -13,11 +13,5 @@ namespace SBReceiver.Services
         public abstract void Invoke(T message);
 
 
-        public void Invoke(object message) {
-            if (CanBeHandledType(message))
-            {
-                Invoke(message);
-            }
-        }
     }
 }

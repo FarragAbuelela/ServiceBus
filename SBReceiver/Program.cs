@@ -1,10 +1,10 @@
 ﻿using Microsoft.Azure.ServiceBus;
-using SBShared.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 using SBShared.DTOs;
 using SBReceiver.Services;
 using SBReceiver.Interfaces;
+using SBReceiver.Messages;
 
 namespace SBReceiver
 {

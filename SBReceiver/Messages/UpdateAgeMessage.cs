@@ -1,10 +1,9 @@
-﻿using SBReceiver;
-using SBReceiver.Services;
+﻿using SBReceiver.Services;
 using SBShared.DTOs;
 using System;
 using System.Linq;
 
-namespace SBShared.Models
+namespace SBReceiver.Messages
 {
     public class UpdateAgeMessage : BaseMessageHandler<UpdateAgeMessageDTO>
     {

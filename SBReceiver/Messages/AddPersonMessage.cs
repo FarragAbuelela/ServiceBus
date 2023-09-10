@@ -1,15 +1,19 @@
-﻿using SBReceiver;
-using SBReceiver.Services;
+﻿using SBReceiver.Services;
 using SBShared.DTOs;
+using SBShared.Models;
 using System;
 using System.Linq;
 
-namespace SBShared.Models
+namespace SBReceiver.Messages
 {
     public class AddPersonMessage : BaseMessageHandler<AddPersonMessageDTO>
     {
         public override void Invoke(AddPersonMessageDTO addPersonMessageDTO)
         {
+            if (addPersonMessageDTO != null)
+            {
+                Console.WriteLine("Message is null !!");
+            }
             if (PersonServices.Persons.Any(p => p.Id == addPersonMessageDTO.PersonId))
             {
                 Console.WriteLine("this person already added !!!");

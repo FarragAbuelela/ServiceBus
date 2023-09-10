@@ -4,13 +4,14 @@ using System.Text;
 
 namespace SBReceiver.Interfaces
 {
-    public interface IMessageHandler
+    public interface IMessageHandler<T>
     {
-        bool CanBeHandledType(object type);
-        void Invoke(object messsage);
-    }
-    public interface IMessageHandler<T> : IMessageHandler
-    {
+        bool CanBeHandledType(T type);
         void Invoke(T messsage);
+    }
+
+    public interface IMessageHandler : IMessageHandler<object>
+    {
+        void Invoke(object messsage);
     }
 }
